@@ -1,0 +1,6 @@
+[submodule "lib/cnpy"]
+	path = lib/cnpy
+	url = https://github.com/rogersce/cnpy.git
+[submodule "lib/spdlog"]
+	path = lib/spdlog
+	url = https://github.com/gabime/spdlog.git

@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "xges"
+version = "0.1.6"
+description = ""
+authors = ["Anonymous"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.26.4"
+sortedcontainers = "^2.4.0"
+numba = "^0.59.1"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.2"
+
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311']
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
