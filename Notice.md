@@ -1,5 +1,4 @@
-
-대규모 인과관계 발굴(산학) (명칭 임의로 지정하여 정식 명칭으로 변경 필요)
+Breaking Bad: Component-Wise Parent Deletion for Score-Based Causal Discovery
 Copyright (c) 2026 the LG AI Research. All rights reserved.
 
 This product from LG AI Research contains the open source provided by NVIDIA Corporation. Also, contains open source software described below. Please refer to the indicated open source licenses included below this notice for the terms and conditions of their use. Only the rights and licenses expressly described in these licenses are granted by LG AI Research; all other rights, including patents, trademarks, and other intellectual property, are expressly reserved.
