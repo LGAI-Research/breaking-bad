@@ -6,7 +6,7 @@ This repository provides the official implementation for our paper:
 
 We propose **parent deletion**, a novel perturbation operator for score-based causal discovery that delete all incoming edges from the parents of a target node (or an entire undirected component) simultaneously. 
 This operator is theoretically sound, computationally efficient, and seamlessly integrates with existing score-based methods via an Iterated Local Search (ILS) framework. Extensive experiments on synthetic and realistic datasets demonstrate consistent improvements across a wide range of settings.
-[[paper]](https://openreview.net/forum?id=oxdOxCxgCu#discussion)
+[[paper]](https://openreview.net/forum?id=oxdOxCxgCu)
 
 ---
 
