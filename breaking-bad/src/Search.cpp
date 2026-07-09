@@ -2064,29 +2064,6 @@ void Search::fit_ges_variant3() {
 
 // =====================================================================================
 // fit_ges_variant4: Base GES + per-node DeletePa(y, H) baseline (NO component grouping)
-//
-// Motivation (UAI 2026 paper 962, Reviewer WR1N):
-//   "the single-node operator DeletePa(X, H) is not evaluated at all. Can you explain
-//    why that is? How do you expect it to perform compared to the component-wise
-//    operator in terms of accuracy and running time?"
-//
-// Variant 2 (fit_ges_variant2) calls hub_only_component_incoming_reset_and_research_edge_only,
-// which (i) computes the undirected component containing the hub, (ii) collects all external
-// parents into ANY component node, and (iii) batch-deletes every external-parent edge across
-// the whole component in a single accept step. That operator is genuinely component-wise.
-//
-// Variant 2 (this function) instead drives the *atomic* DeletePa(y, H) operator
-// (apply_deletepa_only_no_finalize at Search.cpp:76) one-at-a-time: each accepted move
-// touches exactly one target node y and one neighbour subset H ⊆ Ne(y). The plumbing for
-// this is already in node_incoming_reset_batch_ablation_deletepa (Search.cpp:153): it builds
-// a global heap of (y, H) candidates ordered by approximate score and applies each as a
-// single atomic DeletePa with greedy restart on every accept. There is no component-level
-// batching anywhere in that loop, so it is the correct primitive for the WR1N ablation.
-//
-// max_enum_neighbors=10: the underlying enumerate_all_H_subsets exhaustively walks 2^|Ne(y)|
-// and throws for k>=64; we cap k<=10 (hard guard) to keep the ablation tractable on dense
-// hubs. Variant 2's component-wise operator does not need this cap because it does not
-// enumerate H.
 // =====================================================================================
 void Search::fit_ges_variant4() {
     _logger->info("=== [GES Variant 2] Base GES + per-node DeletePa(y, H) (single-node baseline) ===");
