@@ -30,7 +30,7 @@ GRAPH_TYPE="ER" # Erdos-Renyi
 #GRAPH_TYPE="SF" # Scale-Free
 #GRAPH_TYPE="NL_ER" # Non-linear ER
 
-EVAL_ONLY=1 # Set to 1 to only evaluate existing results without running new experiments
+EVAL_ONLY=0 # Set to 1 to only evaluate existing results without running new experiments
 
 
 echo "=================================================="
