@@ -99,7 +99,7 @@ def generate_single_algo_table(df, algo, d, output_dir):
         print(f"⚠ No data for {algo}")
         return
 
-    target_variants = [0, 1, 4, 5]
+    target_variants = [0, 1, 2, 3]
     target_metrics = ["ecshd", "benchpress_f1", "time"]
 
     metric_dir = {
